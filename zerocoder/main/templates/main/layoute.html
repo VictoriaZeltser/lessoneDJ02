@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Учебный центр "Дом молодости"{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-md-3 p-3">
+                <div class="card">
+                    <img src="{% static 'main/img/мезо.jpg' %}" alt="выполнение косметической процедуры" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Учебный центр "Дом молодости"</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a class="nav-link" href="{% url 'home'%}">Главная</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'page2'%}">Вторая</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'page3'%}">Третья</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'page4'%}">Четвертая</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <main class="col-md-9 p-3">
+                <div class="content-container">
+                    {% block content %}
+                    Урок номер 1 по подбору процедуры по типу кожи
+                    {% endblock %}
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
